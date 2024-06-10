@@ -15,3 +15,14 @@ let number2 = 6;
 console.log(number1 ** number2)
 
 console.log(Math.floor(Math.random() * 70))
+
+
+let number = 5;
+
+Number.isInteger(number / 2) ? console.log("even") : console.log("not even")
+
+
+let text = "hello $";
+let newText = text.replace(/\$/, "€");
+
+console.log(newText);
