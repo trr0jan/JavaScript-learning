@@ -73,3 +73,18 @@ switch (monthNumber) {
     console.log('wrong month number');
 }
 
+
+let password = "    aaaaaaaaaaaaaaaaaaaaaaa$#   ";
+let password1 = (password.trim());
+
+if ((password.length > 10) & (password.indexOf("\$") !== -1) & (password.indexOf("\#") !== -1)) {
+    console.log("you have strong password")
+} else {
+    console.log("please change your password")
+}
+
+
+let a = 4;
+let b = 2;
+
+((typeof a == "number") & (typeof b == "number")) ? console.log(a + b) : console.warn("Sum of those items can’t be counted")
