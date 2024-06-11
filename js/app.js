@@ -1,7 +1,7 @@
 let country = 'Ukraine';
 let city = 'Mykolaiv';
-let adress = 'Karpenko str';
-let fullAdress = country + city + adress;
+let address = 'Karpenko str';
+let fullAddress = `${country} ${city} ${address}`;
 
 
 let sideA = 17;
@@ -21,11 +21,11 @@ console.log(Math.floor(Math.random() * 70))
 
 let number = 5;
 
-Number.isInteger(number / 2) ? console.log("even") : console.log("not even")
+(number % 2 === 0) ? console.log("even") : console.log("not even")
 
 
 let text = "hello $";
-let newText = text.replace(/\$/, "€");
+let newText = text.replace("$", "€");
 
 console.log(newText);
 
@@ -74,10 +74,10 @@ switch (monthNumber) {
 }
 
 
-let password = "    aaaaaaaaaaaaaaaaaaaaaaa$#   ";
-let password1 = (password.trim());
+let password = "    this-is-a-good-password$#   ";
+password = password.trim();
 
-if ((password.length > 10) & (password.indexOf("\$") !== -1) & (password.indexOf("\#") !== -1)) {
+if (password.length > 10 && password.includes("$") && password.includes("#")) {
     console.log("you have strong password")
 } else {
     console.log("please change your password")
@@ -87,4 +87,4 @@ if ((password.length > 10) & (password.indexOf("\$") !== -1) & (password.indexOf
 let a = 4;
 let b = 2;
 
-((typeof a == "number") & (typeof b == "number")) ? console.log(a + b) : console.warn("Sum of those items can’t be counted")
+typeof a === "number" && typeof b === "number" ? console.log(a + b) : console.warn("Sum of those items can’t be counted")
