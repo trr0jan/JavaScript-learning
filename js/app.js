@@ -178,3 +178,74 @@ const result = {};
 for (names of arr3) {
     result[names] = (result[names] || 0) + 1;
 }
+
+
+//---------MODULE-8
+
+
+// 1. Напишіть функцію, котра приймає строку як параметр і знаходить найдовше слово у строчці
+
+function findBiggestWord(str) {
+    const words = str.split(' ');
+    let biggestWord = '';
+
+    for (word of words) {
+        if (word.length > biggestWord.length) {
+            biggestWord = word;
+        }
+    }
+
+    return biggestWord;
+}
+
+// 2. Напишіть функцію, котра приймає число як параметр і повертає перевернуте число
+
+function reverseNumber(number) {
+    return parseInt(number.toString().split("").reverse().join(""));
+}
+
+console.log(reverseNumber(123))
+
+// 3. Написати функцію котра буде приймати стрінь значення і повертати нове стрінь значення із символами без повторення
+
+function unique(str) {
+    return [...new Set(str)].join('');
+}
+
+console.log(unique('aabbcc'))
+
+// 4. Написати функцію котра приймає 3 параметри - перемоги, нічиї, поразки і повертає кількість очок команди
+
+// 5. Написати функцію яка приймає масив як параметр і повертає об'єкт із такими властивостями: 
+//   Максимальне значення
+//   Мінімальне значення
+//   Кількість елементів
+//   Середнє арифметичне
+
+function statistics(arr) {
+    const max = Math.max(...arr)
+    const min = Math.min(...arr)
+    const count = arr.length;
+    const sum = arr.reduce((acc, val) => acc + val, 0); 
+    const average = sum / count;
+
+    return {max, min, count, average}
+}
+
+const myArray = [1, 5, 10, -2];
+console.log(statistics(myArray));
+
+
+// 6. Написати функцію котра приймає масив робітників компанії
+
+const workers = [
+    { name: "Jimm", salary: 40000, department: "IT" },
+    { name: "Bob", salary: 60300, department: "HR" },
+    { name: "Stacy", salary: 15000, department: "IT" },
+    { name: "Tom", salary: 55200, department: "DEVOPS" },
+    { name: "Kate", salary: 25000, department: "IT" },
+    { name: "John", salary: 40000, department: "HR" },
+    { name: "Billy", salary: 60000, department: "DEVOPS" },
+];
+
+// Функция должна вернуть объект ( Department це підрозділ в якому найбільша середня зарплатня
