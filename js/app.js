@@ -186,16 +186,7 @@ for (names of arr3) {
 // 1. Напишіть функцію, котра приймає строку як параметр і знаходить найдовше слово у строчці
 
 function findBiggestWord(str) {
-    const words = str.split(' ');
-    let biggestWord = '';
-
-    for (word of words) {
-        if (word.length > biggestWord.length) {
-            biggestWord = word;
-        }
-    }
-
-    return biggestWord;
+    return str.split(' ').reduce((a, b) => (b.length > a.length) ? b : a);
 }
 
 // 2. Напишіть функцію, котра приймає число як параметр і повертає перевернуте число
@@ -204,17 +195,20 @@ function reverseNumber(number) {
     return parseInt(number.toString().split("").reverse().join(""));
 }
 
-console.log(reverseNumber(123))
-
 // 3. Написати функцію котра буде приймати стрінь значення і повертати нове стрінь значення із символами без повторення
 
 function unique(str) {
     return [...new Set(str)].join('');
 }
 
-console.log(unique('aabbcc'))
-
 // 4. Написати функцію котра приймає 3 параметри - перемоги, нічиї, поразки і повертає кількість очок команди
+
+function calcPoints(teamResults) {
+    const winPoints = 3;
+    const drawPoints = 1;
+    const totalPoints = teamResults.wins * winPoints + teamResults.draws * drawPoints;
+    return totalPoints;
+}
 
 // 5. Написати функцію яка приймає масив як параметр і повертає об'єкт із такими властивостями: 
 //   Максимальне значення
@@ -231,10 +225,6 @@ function statistics(arr) {
 
     return {max, min, count, average}
 }
-
-const myArray = [1, 5, 10, -2];
-console.log(statistics(myArray));
-
 
 // 6. Написати функцію котра приймає масив робітників компанії
 
