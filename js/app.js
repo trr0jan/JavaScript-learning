@@ -239,3 +239,7 @@ const workers = [
 ];
 
 // Функция должна вернуть объект ( Department це підрозділ в якому найбільша середня зарплатня
+
+function highestDepartment(workers) {
+    return workers.reduce((prev, current) => (current.salary > prev.salary) ? current : prev);
+}
