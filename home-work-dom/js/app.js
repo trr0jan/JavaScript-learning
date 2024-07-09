@@ -193,7 +193,6 @@ products.forEach(product => {
     groupedProducts[product.category].push(product);
 });
 
-// Отображаем продукты в HTML
 const productContainer = document.getElementById('product-container');
 
 for (category in groupedProducts) { 
