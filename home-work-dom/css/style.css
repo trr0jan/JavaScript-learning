@@ -19,3 +19,8 @@
 .italic {
   font-style: italic;
 }
+
+.wrapper {
+  color: blue;
+  font-size: 40px;
+}
